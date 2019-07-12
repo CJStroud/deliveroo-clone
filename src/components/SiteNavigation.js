@@ -1,15 +1,14 @@
 import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
 
-const PageNavigation = () => {
+const SiteNavigation = () => {
   return <div className={css(styles.navigation)} />
 }
 
 const styles = StyleSheet.create({
   navigation: {
-    height: '72px',
-    backgroundColor: 'lightcoral'
+    height: '72px'
   }
 })
 
-export default PageNavigation
+export default SiteNavigation

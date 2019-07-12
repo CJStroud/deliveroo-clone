@@ -1,11 +1,14 @@
 import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
+import Container from './Container'
 
 const Main = ({ children }) => {
   return (
-    <div className={css(styles.main)}>
-      {children}
-    </div>
+    <Container>
+      <div className={css(styles.main)}>
+        {children}
+      </div>
+    </Container>
   )
 }
 

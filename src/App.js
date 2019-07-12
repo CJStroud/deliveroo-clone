@@ -1,19 +1,26 @@
 import React from 'react'
-import PageNavigation from './components/PageNavigation'
+import SiteNavigation from './components/SiteNavigation'
 import SideFilter from './components/SideFilter'
-import PageContent from './components/PageContent'
+import Feed from './components/Feed'
 import Main from './components/Main'
+import { css, StyleSheet } from 'aphrodite'
 
-function App() {
+function App () {
   return (
-    <div>
-      <PageNavigation />
+    <div className={css(styles.page)}>
+      <SiteNavigation />
       <Main>
         <SideFilter />
-        <PageContent />
+        <Feed />
       </Main>
     </div>
   )
 }
 
-export default App;
+const styles = StyleSheet.create({
+  page: {
+    width: '100%'
+  }
+})
+
+export default App

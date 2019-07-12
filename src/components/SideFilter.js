@@ -8,8 +8,7 @@ const SideFilter = () => {
 const styles = StyleSheet.create({
   sideFilter: {
     width: '280px',
-    height: '100%',
-    backgroundColor: 'lightgreen'
+    height: '100%'
   }
 })
 
