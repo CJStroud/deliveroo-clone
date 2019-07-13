@@ -5,6 +5,6 @@ Colors.set('muted', '#828585')
 Colors.set('link', '#00b8a9')
 Colors.set('blue', '#007e8a')
 Colors.set('green', '#77bf2a')
-Colors.set('oranage', '#ff8100')
+Colors.set('orange', '#ff8100')
 
 export default Colors

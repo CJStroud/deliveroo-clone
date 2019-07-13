@@ -6,6 +6,7 @@ import FeedCardBanner from './FeedCardBanner'
 import FeedCardEtaBubble from './FeedCardEtaBubble'
 import FeedCardRating from './FeedCardRating'
 import FeedCardTags from './FeedCardTags'
+import FeedCardLabel from './FeedCardLabel'
 
 const FeedCard = ({
   title,
@@ -13,7 +14,8 @@ const FeedCard = ({
   deliveryShort,
   deliveryLong,
   rating,
-  tags
+  tags,
+  label
 }) => {
   return (
     <div className={css(styles.feedCard)}>
@@ -23,8 +25,9 @@ const FeedCard = ({
         <div className={css(styles.title)}>
           <Bold>{title}</Bold>
         </div>
-        <FeedCardRating rating={rating} /> (50+)
+        <FeedCardRating rating={rating} />
         <FeedCardTags tags={tags} />
+        <FeedCardLabel text={label} />
       </div>
     </div>
   )
@@ -41,7 +44,8 @@ const styles = StyleSheet.create({
 
   title: {
     ...StyleHelper.fontSize().withLineHeight(),
-    margin: 0
+    margin: 0,
+    marginBottom: '4px'
   },
 
   cardContent: {

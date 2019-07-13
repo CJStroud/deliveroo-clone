@@ -15,7 +15,7 @@ const data = [
       'Tacos',
       'Salads'
     ],
-    offer: 'Meal Deals',
+    label: 'Meal Deals',
     deliveryShort: 30,
     deliveryLong: 40
   },
@@ -31,7 +31,7 @@ const data = [
       'Tacos',
       'Salads'
     ],
-    offer: 'Meal Deals',
+    label: 'Meal Deals',
     deliveryShort: 30,
     deliveryLong: 40
   }
@@ -48,7 +48,7 @@ const FeedStrip = () => {
           rating={data.rating}
           numberOfRatings={data.numberOfRatings}
           tags={data.tags}
-          offer={data.offer}
+          label={data.label}
           deliveryShort={data.deliveryShort}
           deliveryLong={data.deliveryLong}
         />
