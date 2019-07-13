@@ -1,5 +1,6 @@
 import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
+import StyleHelper from '../styleHelper'
 import Bold from './Bold'
 import FeedCardBanner from './FeedCardBanner'
 import FeedCardEtaBubble from './FeedCardEtaBubble'
@@ -19,7 +20,7 @@ const FeedCard = ({
       <FeedCardBanner banner={banner} />
       <div className={css(styles.cardContent)}>
         <FeedCardEtaBubble etaStart={deliveryShort} etaEnd={deliveryLong} />
-        <div className={styles.title}>
+        <div className={css(styles.title)}>
           <Bold>{title}</Bold>
         </div>
         <FeedCardRating rating={rating} /> (50+)
@@ -39,15 +40,14 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: '16px',
-    lineHeight: '19px',
+    ...StyleHelper.fontSize().withLineHeight(),
     margin: 0
   },
 
   cardContent: {
     position: 'relative',
-    padding: '16px',
-    fontSize: '14px'
+    padding: StyleHelper.spacing(),
+    ...StyleHelper.fontSize('small')
   }
 })
 
