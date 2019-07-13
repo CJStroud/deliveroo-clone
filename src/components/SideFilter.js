@@ -7,6 +7,7 @@ const SideFilter = () => {
 
 const styles = StyleSheet.create({
   sideFilter: {
+    flexShrink: 0,
     width: '280px',
     height: '100%'
   }

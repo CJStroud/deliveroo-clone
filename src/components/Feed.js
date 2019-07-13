@@ -2,6 +2,7 @@ import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
 import Title from './Title'
 import FeedStrip from './FeedStrip'
+import FeedStripTitle from './FeedStripTitle'
 
 const Feed = () => {
   return (
@@ -9,16 +10,28 @@ const Feed = () => {
       <Title>Delivering to Birmingham City Centre</Title>
       <p>Categories go here</p>
 
-      <Title>Featured</Title>
+      <FeedStripTitle
+        title={'Featured'}
+        linkTo={'http://google.com'}
+        linkText={'View more (11)'}
+      />
       <FeedStrip />
 
-      <Title>Tasty Discounts</Title>
+      <FeedStripTitle title={'Tasty Discounts'} />
       <FeedStrip />
 
-      <Title>Top Rated</Title>
+      <FeedStripTitle
+        title={'Top Rated'}
+        linkTo={'http://google.com'}
+        linkText={'View more (39)'}
+      />
       <FeedStrip />
 
-      <Title>Fastest Delivery</Title>
+      <FeedStripTitle
+        title={'Fastest Delivery'}
+        linkTo={'http://google.com'}
+        linkText={'View more (26)'}
+      />
       <FeedStrip />
     </div>
   )

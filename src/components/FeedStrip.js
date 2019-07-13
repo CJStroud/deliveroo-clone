@@ -5,7 +5,7 @@ import { css, StyleSheet } from 'aphrodite'
 const data = [
   {
     id: 1,
-    banner: 'https://f.roocdn.com/images/menus/84316/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1538139323',
+    banner: 'https://f.roocdn.com/images/menus/57047/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1559314152',
     title: 'Tortilla',
     rating: 4.4,
     numberOfRatings: 100,
@@ -21,7 +21,7 @@ const data = [
   },
   {
     id: 2,
-    banner: 'https://f.roocdn.com/images/menus/84316/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1538139323',
+    banner: 'https://f.roocdn.com/images/menus/57047/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1559314152',
     title: 'Tortilla',
     rating: 4.4,
     numberOfRatings: 100,
@@ -60,7 +60,8 @@ const FeedStrip = () => {
 const styles = StyleSheet.create({
   feedStrip: {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: '32px'
   }
 })
 
