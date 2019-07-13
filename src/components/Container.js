@@ -11,10 +11,10 @@ const Container = ({ children }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    maxWidth: '1250px',
-    margin: 'auto',
-    padding: '0 16px'
+    width: 'calc(100% - 2 * 32px)',
+    boxSizing: 'content-box',
+    maxWidth: '2560px',
+    padding: '0 32px'
   }
 })
 

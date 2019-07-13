@@ -1,3 +1,5 @@
+const BASE = 16
+
 class FontSize {
   constructor (size = 'defaults') {
     let fontSize = '16px'
@@ -26,7 +28,7 @@ export default {
     return new FontSize(size)
   },
 
-  spacing: (scale) => {
-    return '16px'
+  spacing: (scale = 1) => {
+    return `${BASE * scale}px`
   }
 }

@@ -5,7 +5,7 @@ import Colors from '../colors'
 const FeedCardTags = ({ tags }) => {
   return tags.map((tag) => {
     return (
-      <React.Fragment>
+      <React.Fragment key={tag}>
         <span className={css(styles.dot)} />
         <span className={css(styles.tag)}>{tag}</span>
       </React.Fragment>

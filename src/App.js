@@ -1,6 +1,6 @@
 import React from 'react'
 import SiteNavigation from './components/SiteNavigation'
-import SideFilter from './components/SideFilter'
+import FilterBar from './components/FilterBar'
 import Feed from './components/Feed'
 import Main from './components/Main'
 import { css, StyleSheet } from 'aphrodite'
@@ -10,7 +10,7 @@ function App () {
     <div className={css(styles.page)}>
       <SiteNavigation />
       <Main>
-        <SideFilter />
+        <FilterBar />
         <Feed />
       </Main>
     </div>

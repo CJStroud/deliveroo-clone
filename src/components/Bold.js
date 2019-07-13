@@ -7,7 +7,7 @@ const Bold = ({ children }) => {
 
 const styles = StyleSheet.create({
   bold: {
-    fontWeight: '600'
+    fontWeight: '700'
   }
 })
 

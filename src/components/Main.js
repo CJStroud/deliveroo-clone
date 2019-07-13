@@ -14,9 +14,9 @@ const Main = ({ children }) => {
 
 const styles = StyleSheet.create({
   main: {
+    position: 'relative',
     display: 'flex',
-    flexDirection: 'row',
-    height: '80vh'
+    flexDirection: 'row'
   }
 })
 

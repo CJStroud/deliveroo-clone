@@ -34,6 +34,22 @@ const data = [
     label: 'Meal Deals',
     deliveryShort: 30,
     deliveryLong: 40
+  },
+  {
+    id: 3,
+    banner: 'https://f.roocdn.com/images/menus/57047/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1559314152',
+    title: 'Tortilla',
+    rating: 4.4,
+    numberOfRatings: 100,
+    tags: [
+      'Mexican',
+      'Burritos',
+      'Tacos',
+      'Salads'
+    ],
+    label: 'Meal Deals',
+    deliveryShort: 30,
+    deliveryLong: 40
   }
 ]
 
