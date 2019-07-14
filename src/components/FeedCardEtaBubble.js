@@ -3,10 +3,15 @@ import { css, StyleSheet } from 'aphrodite'
 import Colors from '../colors'
 
 const FeedCardEtaBubble = ({ etaStart, etaEnd }) => {
+  let text = `${etaStart} min`
+  if (etaEnd) {
+    text = `${etaStart} - ${etaEnd}`
+  }
   return (
     <div className={css(styles.deliveryEta)}>
-      <div className={css(styles.etaText)}>{`${etaStart} - ${etaEnd}`}</div>
-      <span className={css(styles.etaSubText)}>Min</span>
+      {!etaEnd && <span className={css(styles.etaSubText)}>Around</span>}
+      <div className={css(styles.etaText)}>{text}</div>
+      {etaEnd && <span className={css(styles.etaSubText)}>Min</span>}
     </div>
   )
 }

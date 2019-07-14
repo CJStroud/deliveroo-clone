@@ -5,6 +5,7 @@ import FeedStrip from './FeedStrip'
 import FeedStripTitle from './FeedStripTitle'
 import MainFeed from './MainFeed'
 import Categories from './Categories'
+import featured from '../data/featured'
 
 const items = [
   {
@@ -147,7 +148,7 @@ const Feed = () => {
         title={'Featured'}
         moreAmount={11}
       />
-      <FeedStrip />
+      <FeedStrip items={featured} />
 
       <FeedStripTitle title={'Tasty Discounts'} />
       <FeedStrip />

@@ -5,11 +5,14 @@ import Spacer from './Spacer'
 import Colors from '../colors'
 
 const getTextForRating = (rating) => {
-  return 'Very good'
+  if (rating >= 4.5) return 'Excellent'
+  if (rating > 4.0) return 'Very Good'
+  return 'Good'
 }
 
 const getColorForRating = (rating) => {
-  return '#007e8a'
+  if (rating >= 4.5) return Colors.get('green')
+  return Colors.get('blue')
 }
 
 const FeedCardRating = ({ rating }) => {

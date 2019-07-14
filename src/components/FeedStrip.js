@@ -72,22 +72,23 @@ const data = [
 
 class FeedStrip extends React.Component {
   render () {
+    const items = this.props.items || data
     return (
       <Carousel
-        length={data.length}
+        length={items.length}
         itemWidth={284}
       >
-        {data.map((data) => (
-          <CarouselItem key={data.id}>
+        {items.map((item) => (
+          <CarouselItem key={item.id}>
             <FeedCard
-              banner={data.banner}
-              title={data.title}
-              rating={data.rating}
-              numberOfRatings={data.numberOfRatings}
-              tags={data.tags}
-              label={data.label}
-              deliveryShort={data.deliveryShort}
-              deliveryLong={data.deliveryLong}
+              banner={item.banner}
+              title={item.title}
+              rating={item.rating}
+              numberOfRatings={item.numberOfRatings}
+              tags={item.tags}
+              label={item.label}
+              deliveryShort={item.deliveryShort}
+              deliveryLong={item.deliveryLong}
             />
           </CarouselItem>
         ))}
