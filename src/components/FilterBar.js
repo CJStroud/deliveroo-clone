@@ -39,7 +39,13 @@ const styles = StyleSheet.create({
     height: '100%',
 
     '::-webkit-scrollbar-thumb': {
-      background: '#d1d7d7'
+      background: '#d1d7d7',
+      overflow: 'visible',
+      borderRadius: '4px'
+    },
+
+    '::-webkit-scrollbar': {
+      width: '6px'
     }
   }
 })
