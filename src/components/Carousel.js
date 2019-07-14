@@ -19,6 +19,7 @@ class FeedStrip extends React.Component {
   }
 
   howManyFullyVisible () {
+    if (!this.carouselRef.current) return 1
     return Math.floor((this.carouselRef.current.offsetWidth - 16) / this.props.itemWidth)
   }
 
@@ -40,7 +41,7 @@ class FeedStrip extends React.Component {
     const { itemsScrolled } = this.state
     const canScrollLeft = itemsScrolled > 0
 
-    const canScrollRight = itemsScrolled < this.props.length
+    const canScrollRight = this.howManyFullyVisible() + itemsScrolled < this.props.length
 
     return (
       <div className={css(styles.wrapper)}>
