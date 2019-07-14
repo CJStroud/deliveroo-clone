@@ -23,3 +23,7 @@ button {
 	cursor: pointer;
   outline: inherit;
 }
+
+input::placeholder {
+  color: #abadad;
+}

@@ -4,11 +4,20 @@ import Link from './Link'
 import Container from './Container'
 import Colors from '../colors'
 
-const NavButton = ({ text, onClick }) => {
+const NavButton = ({ text, onClick, hide }) => {
   return (
-    <button className={css(styles.navButton)} onClick={onClick}>
+    <button className={css(styles.navButton, hide && styles.hideOnMobile)} onClick={onClick}>
       <span>{text}</span>
     </button>
+  )
+}
+
+const Search = () => {
+  return (
+    <input
+      placeholder={'Resturants or cuisines'}
+      className={css(styles.search, styles.searchDesktopOnly)}
+    />
   )
 }
 
@@ -25,17 +34,13 @@ const SiteNavigation = () => {
           />
           </Link>
 
-          <div className={css(styles.searchContainer)}>
-            <input
-              type={'search'}
-              placeholder={'Resturants or cuisines'}
-              className={css(styles.search)}
-            />
-          </div>
+          <Search />
 
-          <NavButton text={'£0.00'} />
-          <NavButton text={'Log in'} />
-          <NavButton text={'Menu'} />
+          <div>
+            <NavButton text={'£0.00'} hide />
+            <NavButton text={'Log in'} hide />
+            <NavButton text={'Menu'} />
+          </div>
 
         </div>
       </Container>
@@ -51,12 +56,19 @@ const styles = StyleSheet.create({
   navigation: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
 
   logo: {
     height: '32px',
     width: '112px'
+  },
+
+  hideOnMobile: {
+    '@media (max-width: 600px)': {
+      display: 'none'
+    }
   },
 
   navButton: {
@@ -71,22 +83,31 @@ const styles = StyleSheet.create({
     }
   },
 
-  searchContainer: {
-    margin: '0 16px',
-    flex: 1
+  searchDesktopOnly: {
+    display: 'none',
+    '@media (min-width: 768px)': {
+      display: 'block'
+    }
   },
 
   search: {
     maxWidth: '650px',
     width: '100%',
-    margin: 'auto',
+    margin: 'auto 16px',
+    flex: 1,
     padding: '12px 16px 12px 40px',
     display: 'block',
     appearance: 'none',
-    fontSize: '14px',
+    fontSize: '16px',
     border: '1px solid #E8EBEB',
     borderRadius: '3px',
-    background: 'rgba(0,0,0,0.04)'
+    background: 'rgba(0,0,0,0.04)',
+
+    ':focus': {
+      border: `2px solid ${Colors.get('link.lighter')}`,
+      outline: 'none',
+      boxShadow: 'inset 0 2px 4px rgba(0,0,0,.05), 0 0 0 3px rgba(0,204,188,.3)'
+    }
   }
 })
 

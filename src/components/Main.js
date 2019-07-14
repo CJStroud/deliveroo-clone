@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
 
-    '@media (min-width: 768px)': {
+    '@media (min-width: 500px)': {
       flexDirection: 'row'
     }
   }
