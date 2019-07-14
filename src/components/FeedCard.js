@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     width: '268px',
     boxShadow: '0 1px 4px rgba(0,0,0,.08)',
     border: '1px solid rgba(0,0,0,.04)',
-    margin: '4px',
     borderRadius: '4px'
   },
 
