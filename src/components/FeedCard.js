@@ -8,6 +8,7 @@ import FeedCardRating from './FeedCardRating'
 import FeedCardTags from './FeedCardTags'
 import FeedCardLabel from './FeedCardLabel'
 import Link from './Link'
+import Colors from '../colors'
 
 const FeedCard = ({
   title,
@@ -39,6 +40,7 @@ const FeedCard = ({
 
 const styles = StyleSheet.create({
   feedCard: {
+    color: Colors.get('font'),
     width: '268px',
     boxShadow: '0 1px 4px rgba(0,0,0,.08)',
     border: '1px solid rgba(0,0,0,.04)',
