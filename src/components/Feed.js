@@ -40,7 +40,7 @@ const Feed = () => {
 const styles = StyleSheet.create({
   feed: {
     flex: '1',
-    overflow: 'hidden',
+    minWidth: 0,
     height: '100%',
     marginTop: '32px'
   }

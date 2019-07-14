@@ -1,5 +1,7 @@
 import React from 'react'
 import FeedCard from './FeedCard'
+import CarouselButtonRight from './CarouselButtonRight'
+import CarouselButtonLeft from './CarouselButtonLeft'
 import { css, StyleSheet } from 'aphrodite'
 import styleHelper from '../styleHelper'
 
@@ -72,7 +74,8 @@ const data = [
 
 const getTransform = (itemsScrolled) => {
   if (itemsScrolled === 0) return 0
-  return (itemsScrolled * -264) - (20 * (itemsScrolled - 1))
+  const transform = (itemsScrolled * -266) - (22 * (itemsScrolled - 1))
+  return Math.min(transform, 0)
 }
 
 class FeedStrip extends React.Component {
@@ -106,12 +109,13 @@ class FeedStrip extends React.Component {
 
   render () {
     const { itemsScrolled } = this.state
-    const canScrollLeft = itemsScrolled !== 0
-    const howManyFullyVisible = 1 // this.carouselRef.current ? Math.floor(this.carouselRef.current.offsetWidth / 264) : 1
+    const canScrollLeft = itemsScrolled > 0
+    const howManyFullyVisible = this.carouselRef.current ? Math.floor((this.carouselRef.current.offsetWidth - 16) / 284) : 1
     const canScrollRight = (itemsScrolled * howManyFullyVisible) < data.length - 1
 
     return (
-      <React.Fragment>
+      <div className={css(styles.wrapper)}>
+        {canScrollLeft && <CarouselButtonLeft onClick={this.scrollLeft} />}
         <div className={css(styles.feedStrip)}>
           <div ref={this.carouselRef} className={css(styles.carousel)} style={{ transform: `translateX(${getTransform(itemsScrolled)}px)` }}>
             {data.map((data) => (
@@ -131,15 +135,20 @@ class FeedStrip extends React.Component {
             ))}
           </div>
         </div>
-        {canScrollRight && <button onClick={this.scrollRight}>Next</button>}
-        {canScrollLeft && <button onClick={this.scrollLeft}>Prev</button>}
-      </React.Fragment>
+        {canScrollRight && <CarouselButtonRight onClick={this.scrollRight} />}
+      </div>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    position: 'relative',
+    width: '100%'
+  },
+
   feedStrip: {
+    position: 'relative',
     margin: '0 -4px 32px',
     overflow: 'hidden'
   },
