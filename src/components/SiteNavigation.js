@@ -3,11 +3,15 @@ import { css, StyleSheet } from 'aphrodite'
 import Link from './Link'
 import Container from './Container'
 import Colors from '../colors'
+import BasketIcon from './BasketIcon'
+import HomeIcon from './HomeIcon'
+import BurgerIcon from './BurgerIcon'
 
-const NavButton = ({ text, onClick, hide }) => {
+const NavButton = ({ text, onClick, hide, icon: Icon }) => {
   return (
     <button className={css(styles.navButton, hide && styles.hideOnMobile)} onClick={onClick}>
-      <span>{text}</span>
+      <Icon color={Colors.get('link.lighter')} />
+      <span className={css(styles.navButtonText)}>{text}</span>
     </button>
   )
 }
@@ -37,9 +41,9 @@ const SiteNavigation = () => {
           <Search />
 
           <div>
-            <NavButton text={'£0.00'} hide />
-            <NavButton text={'Log in'} hide />
-            <NavButton text={'Menu'} />
+            <NavButton icon={BasketIcon} text={'£0.00'} hide />
+            <NavButton icon={HomeIcon} text={'Log in'} hide />
+            <NavButton icon={BurgerIcon} text={'Menu'} />
           </div>
 
         </div>
@@ -80,7 +84,16 @@ const styles = StyleSheet.create({
 
     ':hover': {
       borderColor: Colors.get('gray')
+    },
+
+    ':focus': {
+      outline: 'none',
+      boxShadow: 'inset 0 2px 4px rgba(0,0,0,.05), 0 0 0 3px rgba(0,204,188,.3)'
     }
+  },
+
+  navButtonText: {
+    paddingLeft: '8px'
   },
 
   searchDesktopOnly: {

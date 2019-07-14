@@ -140,7 +140,6 @@ const Feed = () => {
   return (
     <div className={css(styles.feed)}>
       <Title>Delivering to Birmingham City Centre</Title>
-      <p>Categories go here</p>
 
       <FeedStripTitle
         title={'Featured'}
