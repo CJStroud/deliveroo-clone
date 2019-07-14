@@ -74,7 +74,7 @@ const data = [
 
 const getTransform = (itemsScrolled) => {
   if (itemsScrolled === 0) return 0
-  const transform = (itemsScrolled * -266) - (22 * (itemsScrolled - 1))
+  const transform = (itemsScrolled * -268) - (16 * (itemsScrolled - 1))
   return Math.min(transform, 0)
 }
 
@@ -150,13 +150,16 @@ const styles = StyleSheet.create({
   feedStrip: {
     position: 'relative',
     margin: '0 -4px 32px',
-    overflow: 'hidden'
+    overflow: 'auto',
+    '@media (min-width: 768px)': {
+      overflow: 'hidden'
+    },
   },
 
   carousel: {
     display: 'flex',
     flexDirection: 'row',
-    transition: 'transform .6s ease-out, -webkit-transform .6s ease-out'
+    transition: 'transform .6s ease-out, -webkit-transform .6s ease-out',
   },
 
   carouselItem: {

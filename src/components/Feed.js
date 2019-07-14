@@ -13,7 +13,7 @@ const Feed = () => {
       <FeedStripTitle
         title={'Featured'}
         linkTo={'http://google.com'}
-        linkText={'View more (11)'}
+        moreAmount={11}
       />
       <FeedStrip />
 
@@ -23,14 +23,14 @@ const Feed = () => {
       <FeedStripTitle
         title={'Top Rated'}
         linkTo={'http://google.com'}
-        linkText={'View more (39)'}
+        moreAmount={39}
       />
       <FeedStrip />
 
       <FeedStripTitle
         title={'Fastest Delivery'}
         linkTo={'http://google.com'}
-        linkText={'View more (26)'}
+        moreAmount={26}
       />
       <FeedStrip />
     </div>

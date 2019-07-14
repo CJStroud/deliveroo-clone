@@ -23,6 +23,10 @@ const FilterBar = () => {
 
 const styles = StyleSheet.create({
   filterBar: {
+    display: 'none',
+    '@media (min-width: 768px)': {
+      display: 'block'
+    },
     position: 'sticky',
     top: '-1px',
     flexShrink: 0,

@@ -14,6 +14,10 @@ const CarouselButtonRight = ({ onClick }) => {
 
 const styles = StyleSheet.create({
   button: {
+    '@media (min-width: 768px)': {
+      display: 'block'
+    },
+    display: 'none',
     zIndex: 1,
     position: 'absolute',
     background: Colors.get('white'),

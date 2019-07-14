@@ -3,11 +3,11 @@ import Title from './Title'
 import Link from './Link'
 import { css, StyleSheet } from 'aphrodite'
 
-const FeedStripTitle = ({ title, linkTo, linkText }) => {
-  const link = linkText &&
+const FeedStripTitle = ({ title, linkTo, moreAmount }) => {
+  const link = moreAmount &&
     (
       <div className={css(styles.linkSpacing)}>
-        <Link to={linkTo}>{linkText}</Link>
+        <Link to={linkTo}>{`View more (${moreAmount})`}</Link>
       </div>
     )
 

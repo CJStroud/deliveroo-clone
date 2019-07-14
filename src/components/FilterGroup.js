@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    paddingLeft: styleHelper.spacing()
+    paddingLeft: styleHelper.spacing(0.5)
   },
 
   title: {
