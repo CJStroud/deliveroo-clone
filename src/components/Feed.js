@@ -144,7 +144,6 @@ const Feed = () => {
 
       <FeedStripTitle
         title={'Featured'}
-        linkTo={'http://google.com'}
         moreAmount={11}
       />
       <FeedStrip />
@@ -154,14 +153,12 @@ const Feed = () => {
 
       <FeedStripTitle
         title={'Top Rated'}
-        linkTo={'http://google.com'}
         moreAmount={39}
       />
       <FeedStrip />
 
       <FeedStripTitle
         title={'Fastest Delivery'}
-        linkTo={'http://google.com'}
         moreAmount={26}
       />
       <FeedStrip />

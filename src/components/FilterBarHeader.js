@@ -10,7 +10,7 @@ const FilterBarHeader = () => {
     <div className={css(styles.container)}>
       <div className={css(styles.content)}>
         <div>Now</div>
-        <div>
+        <div className={css(styles.header)}>
           <Bold>Birmingham City Centre</Bold>
           <Link>Change</Link>
         </div>
@@ -27,6 +27,13 @@ const styles = StyleSheet.create({
   content: {
     paddingBottom: styleHelper.spacing(),
     borderBottom: `1px solid ${Colors.get('lightgray')}`
+  },
+
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   }
 })
 

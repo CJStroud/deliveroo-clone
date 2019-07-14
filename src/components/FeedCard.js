@@ -7,6 +7,7 @@ import FeedCardEtaBubble from './FeedCardEtaBubble'
 import FeedCardRating from './FeedCardRating'
 import FeedCardTags from './FeedCardTags'
 import FeedCardLabel from './FeedCardLabel'
+import Link from './Link'
 
 const FeedCard = ({
   title,
@@ -19,18 +20,20 @@ const FeedCard = ({
   fluid
 }) => {
   return (
-    <div className={css(styles.feedCard, fluid && styles.fluid)}>
-      <FeedCardBanner banner={banner} />
-      <div className={css(styles.cardContent)}>
-        <FeedCardEtaBubble etaStart={deliveryShort} etaEnd={deliveryLong} />
-        <div className={css(styles.title)}>
-          <Bold>{title}</Bold>
+    <Link>
+      <div className={css(styles.feedCard, fluid && styles.fluid)}>
+        <FeedCardBanner banner={banner} />
+        <div className={css(styles.cardContent)}>
+          <FeedCardEtaBubble etaStart={deliveryShort} etaEnd={deliveryLong} />
+          <div className={css(styles.title)}>
+            <Bold>{title}</Bold>
+          </div>
+          <FeedCardRating rating={rating} />
+          <FeedCardTags tags={tags} />
+          <FeedCardLabel text={label} />
         </div>
-        <FeedCardRating rating={rating} />
-        <FeedCardTags tags={tags} />
-        <FeedCardLabel text={label} />
       </div>
-    </div>
+    </Link>
   )
 }
 
