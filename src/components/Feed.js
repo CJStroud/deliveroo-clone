@@ -6,137 +6,25 @@ import FeedStripTitle from './FeedStripTitle'
 import MainFeed from './MainFeed'
 import Categories from './Categories'
 import featured from '../data/featured'
+import tasty from '../data/tasty'
+import top from '../data/top'
+import fastest from '../data/fastest'
+import all from '../data/all'
 
-const items = [
-  {
-    id: 1,
-    banner: 'https://f.roocdn.com/images/menus/57047/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1559314152',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
-  },
-  {
-    id: 2,
-    banner: 'https://f.roocdn.com/images/menus/94485/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1541675371',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
-  },
-  {
-    id: 3,
-    banner: 'https://f.roocdn.com/images/menus/25774/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1535726160',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
-  },
-  {
-    id: 4,
-    banner: 'https://f.roocdn.com/images/menus/18016/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1473408217',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
-  },
-  {
-    id: 5,
-    banner: 'https://f.roocdn.com/images/menus/57047/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1559314152',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
-  },
-  {
-    id: 6,
-    banner: 'https://f.roocdn.com/images/menus/94485/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1541675371',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
-  },
-  {
-    id: 7,
-    banner: 'https://f.roocdn.com/images/menus/25774/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1535726160',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
-  },
-  {
-    id: 8,
-    banner: 'https://f.roocdn.com/images/menus/18016/header-image.jpg?width=524&height=294&auto=webp&format=jpg&fit=crop&v=1473408217',
-    title: 'Tortilla',
-    rating: 4.4,
-    numberOfRatings: 100,
-    tags: [
-      'Mexican',
-      'Burritos',
-      'Tacos',
-      'Salads'
-    ],
-    label: 'Meal Deals',
-    deliveryShort: 30,
-    deliveryLong: 40
+function shuffle (a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]]
   }
-]
+  return a
+}
+
+// Random order each page load
+shuffle(all)
+shuffle(featured)
+shuffle(tasty)
+shuffle(top)
+shuffle(fastest)
 
 const Feed = () => {
   return (
@@ -151,21 +39,21 @@ const Feed = () => {
       <FeedStrip items={featured} />
 
       <FeedStripTitle title={'Tasty Discounts'} />
-      <FeedStrip />
+      <FeedStrip items={tasty} />
 
       <FeedStripTitle
         title={'Top Rated'}
         moreAmount={39}
       />
-      <FeedStrip />
+      <FeedStrip items={top} />
 
       <FeedStripTitle
         title={'Fastest Delivery'}
         moreAmount={26}
       />
-      <FeedStrip />
+      <FeedStrip items={fastest} />
 
-      <MainFeed items={items} />
+      <MainFeed items={all} />
     </div>
   )
 }
