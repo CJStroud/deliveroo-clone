@@ -15,10 +15,11 @@ const FeedCard = ({
   deliveryLong,
   rating,
   tags,
-  label
+  label,
+  fluid
 }) => {
   return (
-    <div className={css(styles.feedCard)}>
+    <div className={css(styles.feedCard, fluid && styles.fluid)}>
       <FeedCardBanner banner={banner} />
       <div className={css(styles.cardContent)}>
         <FeedCardEtaBubble etaStart={deliveryShort} etaEnd={deliveryLong} />
@@ -39,6 +40,10 @@ const styles = StyleSheet.create({
     boxShadow: '0 1px 4px rgba(0,0,0,.08)',
     border: '1px solid rgba(0,0,0,.04)',
     borderRadius: '4px'
+  },
+
+  fluid: {
+    width: '100%'
   },
 
   title: {
