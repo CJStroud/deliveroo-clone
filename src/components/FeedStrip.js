@@ -78,9 +78,8 @@ class FeedStrip extends React.Component {
         itemWidth={284}
       >
         {data.map((data) => (
-          <CarouselItem>
+          <CarouselItem key={data.id}>
             <FeedCard
-              key={data.id}
               banner={data.banner}
               title={data.title}
               rating={data.rating}

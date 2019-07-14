@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: `-${styleHelper.spacing()}`,
     margin: 'auto',
-    transform: 'translateY(-50%)',
     border: '1px solid rgba(0, 0, 0, .04)',
     boxShadow: '0 6px 20px rgba(0,0,0,.08)'
   }

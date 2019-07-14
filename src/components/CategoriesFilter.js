@@ -2,11 +2,6 @@ import React from 'react';
 import FilterGroup from './FilterGroup'
 import CheckboxButton from './CheckboxButton'
 
-const GLUTEN_FREE = 'gluten'
-const HALAL = 'halal'
-const VEGAN = 'vegan'
-const VEGETARIAN = 'vegetarian'
-
 class CategoriesFilter extends React.Component {
   state = {}
 
@@ -21,6 +16,7 @@ class CategoriesFilter extends React.Component {
       <FilterGroup title={'Categories'} isCollapsedByDefault>
         {items.map((item) => {
           return <CheckboxButton
+            key={item}
             label={item}
             onChange={this.selectOption}
             selected={this.state[item]}

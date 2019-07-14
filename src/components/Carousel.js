@@ -3,9 +3,9 @@ import CarouselButtonRight from './CarouselButtonRight'
 import CarouselButtonLeft from './CarouselButtonLeft'
 import { css, StyleSheet } from 'aphrodite'
 
-const getTransform = (itemsScrolled) => {
+const getTransform = (itemsScrolled, offset) => {
   if (itemsScrolled === 0) return 0
-  const transform = (itemsScrolled * -268) - (16 * (itemsScrolled - 1))
+  const transform = (itemsScrolled * -offset) - (16 * (itemsScrolled - 1))
   return Math.min(transform, 0)
 }
 
@@ -18,37 +18,39 @@ class FeedStrip extends React.Component {
     this.carouselRef = React.createRef()
   }
 
+  howManyFullyVisible () {
+    return Math.floor((this.carouselRef.current.offsetWidth - 16) / this.props.itemWidth)
+  }
+
   scrollRight = () => {
-    const howManyFullyVisible = Math.floor((this.carouselRef.current.offsetWidth - 16) / this.props.itemWidth)
-    const numberToScroll = howManyFullyVisible
+    const numberToScroll = this.howManyFullyVisible()
     const itemsScrolled = this.state.itemsScrolled + numberToScroll
 
-    this.setState({
-      itemsScrolled
-    })
+    this.setState({ itemsScrolled })
   }
 
   scrollLeft = () => {
-    const howManyFullyVisible = Math.floor((this.carouselRef.current.offsetWidth - 16) / this.props.itemWidth)
-    const numberToScroll = howManyFullyVisible
+    const numberToScroll = this.howManyFullyVisible()
     const itemsScrolled = this.state.itemsScrolled - numberToScroll
 
-    this.setState({
-      itemsScrolled
-    })
+    this.setState({ itemsScrolled })
   }
 
   render () {
     const { itemsScrolled } = this.state
     const canScrollLeft = itemsScrolled > 0
-    const howManyFullyVisible = this.carouselRef.current ? Math.floor((this.carouselRef.current.offsetWidth - 16) / this.props.itemWidth) : 1
-    const canScrollRight = (itemsScrolled * howManyFullyVisible) < this.props.length
+
+    const canScrollRight = itemsScrolled < this.props.length
 
     return (
       <div className={css(styles.wrapper)}>
         {canScrollLeft && <CarouselButtonLeft onClick={this.scrollLeft} />}
         <div className={css(styles.feedStrip)}>
-          <div ref={this.carouselRef} className={css(styles.carousel)} style={{ transform: `translateX(${getTransform(itemsScrolled)}px)` }}>
+          <div
+            ref={this.carouselRef}
+            className={css(styles.carousel)}
+            style={{ transform: `translateX(${getTransform(itemsScrolled, this.props.itemWidth - 16)}px)` }}
+          >
             {this.props.children}
           </div>
         </div>

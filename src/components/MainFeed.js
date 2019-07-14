@@ -8,10 +8,9 @@ class MainFeed extends React.Component {
       <div className={css(styles.grid)}>
         {this.props.items.map(data => {
           return (
-            <div className={css(styles.col)}>
+            <div className={css(styles.col)} key={data.id}>
               <FeedCard
                 fluid
-                key={data.id}
                 banner={data.banner}
                 title={data.title}
                 rating={data.rating}

@@ -4,6 +4,7 @@ import Title from './Title'
 import FeedStrip from './FeedStrip'
 import FeedStripTitle from './FeedStripTitle'
 import MainFeed from './MainFeed'
+import Categories from './Categories'
 
 const items = [
   {
@@ -140,6 +141,7 @@ const Feed = () => {
   return (
     <div className={css(styles.feed)}>
       <Title>Delivering to Birmingham City Centre</Title>
+      <Categories />
 
       <FeedStripTitle
         title={'Featured'}
