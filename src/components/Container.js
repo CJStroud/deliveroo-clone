@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
   container: {
     boxSizing: 'content-box',
     maxWidth: '2560px',
-    width: `calc(100% - 2 * ${styleHelper.spacing(0.5)}`,
-    padding: `0 ${styleHelper.spacing(0.5)}`,
+    width: `calc(100% - 2 * 8px)`,
+    padding: `0 8px`,
 
     '@media only screen and (max-width: 1199px) and (min-width: 768px)': {
       width: `calc(100% - 2 * ${styleHelper.spacing()})`,
