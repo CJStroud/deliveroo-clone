@@ -18,6 +18,10 @@ class FeedStrip extends React.Component {
     this.carouselRef = React.createRef()
   }
 
+  componentDidMount () {
+    this.setState({ domLoaded: true })
+  }
+
   howManyFullyVisible () {
     if (!this.carouselRef.current) return 1
     return Math.floor((this.carouselRef.current.offsetWidth - 16) / this.props.itemWidth)
