@@ -2,6 +2,7 @@ import React from 'react'
 import Title from './Title'
 import Link from './Link'
 import { css, StyleSheet } from 'aphrodite'
+import styleHelper from '../styleHelper'
 
 const FeedStripTitle = ({ title, linkTo, moreAmount }) => {
   const link = moreAmount &&
@@ -22,7 +23,7 @@ const FeedStripTitle = ({ title, linkTo, moreAmount }) => {
 const styles = StyleSheet.create({
   linkSpacing: {
     display: 'inline-block',
-    paddingLeft: '16px'
+    paddingLeft: styleHelper.spacing()
   }
 })
 

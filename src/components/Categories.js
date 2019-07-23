@@ -45,7 +45,7 @@ const Categories = () => {
 const styles = StyleSheet.create({
   category: {
     position: 'relative',
-    paddingLeft: '16px',
+    paddingLeft: styleHelper.spacing(),
     borderRadius: '4px',
     width: '167px',
     height: '88px',

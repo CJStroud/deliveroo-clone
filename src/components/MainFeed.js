@@ -1,6 +1,7 @@
 import React from 'react'
 import FeedCard from './FeedCard'
 import { css, StyleSheet } from 'aphrodite'
+import styleHelper from '../styleHelper'
 
 class MainFeed extends React.Component {
   render () {
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   col: {
     width: '100%',
     padding: '0 8px',
-    marginBottom: '16px',
+    marginBottom: styleHelper.spacing(),
 
     '@media only screen and (max-width: 1199px) and (min-width: 768px)': {
       width: '50%'

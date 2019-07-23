@@ -6,6 +6,7 @@ import Colors from '../colors'
 import BasketIcon from './BasketIcon'
 import HomeIcon from './HomeIcon'
 import BurgerIcon from './BurgerIcon'
+import styleHelper from '../styleHelper'
 
 const NavButton = ({ text, onClick, hide, icon: Icon }) => {
   return (
@@ -106,12 +107,12 @@ const styles = StyleSheet.create({
   search: {
     maxWidth: '650px',
     width: '100%',
-    margin: 'auto 16px',
+    margin: `auto ${styleHelper.spacing()}`,
     flex: 1,
     padding: '12px 16px 12px 40px',
     display: 'block',
     appearance: 'none',
-    fontSize: '16px',
+    ...styleHelper.fontSize(),
     border: '1px solid #E8EBEB',
     borderRadius: '3px',
     background: 'rgba(0,0,0,0.04)',

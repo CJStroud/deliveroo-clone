@@ -1,23 +1,31 @@
 const BASE = 16
 
-class FontSize {
-  constructor (size = 'defaults') {
-    let fontSize = '16px'
-    if (size === 'small') {
-      fontSize = '14px'
-    }
+const fonts = {
+  small: {
+    fontSize: '14px',
+    lineHeight: '16px'
+  },
 
+  default: {
+    fontSize: '16px',
+    lineHeight: '19px'
+  },
+
+  big: {
+    fontSize: '22px',
+    lineHeight: '28px'
+  }
+}
+
+class FontSize {
+  constructor (size = 'default') {
     this.size = size
-    this.fontSize = fontSize
+    this.fontSize = fonts[size].fontSize
     return this
   }
 
   withLineHeight () {
-    this.lineHeight = '19px'
-
-    if (this.size === 'small') {
-      this.lineHeight = '16px'
-    }
+    this.lineHeight = fonts[this.size].lineHeight
 
     return this
   }
